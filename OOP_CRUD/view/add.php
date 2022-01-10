@@ -53,6 +53,31 @@ $ctrl = new Guru();
                 }
             });
             
+            function add_option() {
+            $('#form-add-option').on('submit', function(e) {
+                e.preventDefault();
+                let status = $('#record_add_status').val();
+
+                $.ajax({
+                    url: 'api.php',
+                    type: 'POST',
+                    data: {
+                        status: status,
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        show_status();
+                        alert('Success added data');
+
+
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+            });
+        }
+            
         </script>
        <div class="container">
            <row>
