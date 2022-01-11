@@ -6,17 +6,7 @@ include '../controller/Guru.php';
 $ctrl = new Guru();
 $id = $_GET['id'];
 $isi = $ctrl->getData($id);
-$result_golongan = $ctrl->getJenisData2();  
-
-    if ($isi['golongan'] == "1") {
-        $gol = "Golongan I";
-    } else if ($isi['golongan'] == "2") {
-        $gol = "Golongan II";
-    } else if ($isi['golongan'] == "3") {
-        $gol = "Golongan III";
-    } else if ($isi['golongan'] == "4") {
-        $gol = "Golongan IV";
-    }   
+$result_golongan = $ctrl->getJenisData2();    
 
 ?>
 <!DOCTYPE html>
@@ -27,6 +17,36 @@ $result_golongan = $ctrl->getJenisData2();
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </head> 
     <body>
+    <script type="text/javascript">
+            $(document).ready(function(){
+                //alert('test');
+                show_golongan(); //memanggil function yang ada di bawah
+
+            function show_golongan(){  //untuk menampilkan data product
+                $.ajax({
+                    type    : 'GET',
+                    url     : 'api.php',
+                    async   : false,
+                    dataType : 'json',
+                    success : function(data){
+                        console.log(data);
+                        var html = '';
+                        var i;
+                        var no;
+                        for(i=0; i<data.length; i++){
+                            no = i + 1;
+                            html +=
+                                '<option value="'+data[i].gol+'">'+data[i].gol+'</option>';
+                        }//akhir dari looping
+                        $('#gol').html(html);//mengirim data
+                    },
+                    error:function(data){
+                        console.log(data);
+                    }
+                });    
+                }
+            });    
+        </script>
        <div class="container">
            <row>
                <div class="card">
