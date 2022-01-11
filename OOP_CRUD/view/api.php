@@ -14,6 +14,7 @@
             $ctrl->getJenisData();
             break;
         case 'POST' :
+            $ctrl->setGolongan();
         break;
 
         case 'PUT' :
