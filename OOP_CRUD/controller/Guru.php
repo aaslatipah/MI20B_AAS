@@ -35,6 +35,17 @@ include '../model/Guru_model.php';
       echo json_encode($hasil);
    }
 
+   function setGolongan(){
+      $golongan = $_POST['golongan'];
+      $data[] = array(
+         'gol' => $golongan,
+      );
+
+      $add = $this->model->simpanGolongan($data);
+      $result['status']=1;
+      echo json_encode($result);
+   }
+
    function getJenisData2(){
       $hasil = $this->model->getJenisData();
       return $hasil;
@@ -83,20 +94,6 @@ include '../model/Guru_model.php';
       }
    	}
    }
-
-   // function simpanGolongan(){
-   //    $golongan = $_POST['golongan'];
-   //    $data[] = array(
-   //             'golongan'  =>$golongan,
-   //    );
-   //    $result = $this->model->simpanGolongan($data);
-   //    if($result){
-   //       echo '200';
-   //    }else{
-   //       echo '300';
-   //    }
-   //    }
-   // }
 
    function updateGuru($id){
     if (isset($_POST['update']))
