@@ -33,7 +33,16 @@ $ctrl = new Auth();
                 </div>
                 
             <?php 
-                }
+                } else if(isset($_GET['pesan']) =='failed' && isset($_GET['frm']) =='captcha'){
+                
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Maaf</strong>  Anda Berhasil Keluar.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        
+                    <?php 
+                        }
             ?>
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
