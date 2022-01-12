@@ -24,7 +24,7 @@ $hasil = $ctrl->index();
        
        <div class="container"> 
 
-        <h1><center>Data Guru</h1></center>
+        <h1><center>Laporan Data Guru</h1></center>
         <table class="table table-bordered border-dark">
     <thead class="table-dark text-center">
         <tr>

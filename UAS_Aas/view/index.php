@@ -31,6 +31,7 @@ $ctrl = new Auth();
                 <strong>Selamat!!!</strong>  Anda Berhasil Keluar.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
+                
             <?php 
                 }
             ?>

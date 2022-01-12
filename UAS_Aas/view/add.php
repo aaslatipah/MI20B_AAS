@@ -39,6 +39,7 @@ $ctrl = new Guru();
                         var html = '';
                         var i;
                         var no;
+                        html = '<option value="">Masukkan Golongan...</option>';
                         for(i=0; i<data.length; i++){
                             no = i + 1;
                             html +=
